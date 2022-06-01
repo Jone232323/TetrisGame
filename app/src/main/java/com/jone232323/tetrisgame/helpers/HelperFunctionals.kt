@@ -1,5 +1,5 @@
 package com.jone232323.tetrisgame.helpers
 
-fun HelperFunctionals(sizeOuter:Int, sizeInner:Int):Array<ByteArray> = Array(sizeOuter) {
+fun array2dOfByte(sizeOuter:Int, sizeInner:Int):Array<ByteArray> = Array(sizeOuter) {
     ByteArray(sizeInner)
 }
