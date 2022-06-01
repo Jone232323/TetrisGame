@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
 import com.jone232323.tetrisgame.storage.AppPreferenses
 
 class MainActivity : AppCompatActivity() {
@@ -33,7 +35,13 @@ class MainActivity : AppCompatActivity() {
     }
     fun onBtnResetScoreClick(view:View){
 
-        var preferenses:AppPreferenses
+        var preferenses:AppPreferenses = AppPreferenses(this)
+        preferenses.resetHightScore()
+
+        tvHightScore?.text = "HIGTH SCORE:${preferenses.getHigtScore()}"
+
+        Snackbar.make(view,"Hight score succefually reset",Snackbar.LENGTH_LONG).show()
+        Toast.makeText(this,"Hight score succefually reset",Toast.LENGTH_LONG).show()
 
     }
     fun onBtnExitClick(view:View){
